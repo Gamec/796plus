@@ -1,4 +1,4 @@
-var REFRESH_INTERVAL = 2500;
+var REFRESH_INTERVAL = 1000;
 
 Meteor.setInterval(function () { 
     // Ticker
@@ -43,6 +43,6 @@ Meteor.setInterval(function () {
         data.asks.forEach(function(item) {
             insertOrder('ask', item[0], item[1]);
         });
-        Orderbook.remove({updated: { $lt: (new Date()).getTime() - 1000 }});
+        Orderbook.remove({updated: { $lt: (new Date()).getTime() - REFRESH_INTERVAL }});
     });
 }, REFRESH_INTERVAL);
