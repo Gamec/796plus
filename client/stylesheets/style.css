@@ -15,7 +15,7 @@ body {
 .chart {
   overflow: hidden;
   width: 750px;/*820px;*/
-  height: 367px;
+  height: 409px;
   margin-bottom: 5px;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 #order-form {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 @-webkit-keyframes fadeOut {

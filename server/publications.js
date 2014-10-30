@@ -3,7 +3,7 @@ Meteor.publish('tickerdata', function() {
 });
 
 Meteor.publish('trades', function() {
-    return Trades.find({}, {sort: {date: -1}, limit: 30});
+    return Trades.find({}, {sort: {date: -1}, limit: 200});
 });
 
 Meteor.publish('bids', function() {

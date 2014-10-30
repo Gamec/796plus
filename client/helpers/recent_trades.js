@@ -1,6 +1,6 @@
 Template.recentTrades.helpers({
     trades: function() {
-        return Trades.find({}, {sort: {date: -1}});
+        return Trades.find({}, {sort: {date: -1}, limit: 30});
     }
 });
 

@@ -5,9 +5,20 @@
   <div class="row">
     <div class="col-md-8" id="col-chart">
       <div class="chart">
-        <iframe src="https://bitcoinwisdom.com/markets/796/futures" seamless width="1151" height="400"></iframe>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#bitcoinwisdom" role="tab" data-toggle="tab">BitcoinWisdom</a></li>
+          <li role="presentation"><a href="#tickchart" role="tab" data-toggle="tab">Tick Chart</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="bitcoinwisdom">
+            <iframe src="https://bitcoinwisdom.com/markets/796/futures" seamless width="1151" height="400"></iframe>
+            <a href="#" class="btn btn-default btn-xs pull-right full-chart"><span class="glyphicon glyphicon-resize-full"></span></a>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tickchart">
+            {{> highchartsHelper chartId="test" chartWidth="750" charHeight="100%" chartObject=tickChart}}
+          </div>
+        </div>
       </div>
-      <a href="#" class="btn btn-default btn-xs pull-right full-chart"><span class="glyphicon glyphicon-resize-full"></span></a>
     </div>
     <div class="col-md-4" id="col-order-form">
       {{> orderForm}}
