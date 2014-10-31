@@ -2,29 +2,15 @@
 
 ### Installation
 
-Step 1. Download [zipped archive](https://github.com/M4v3R/796plus/archive/master.zip) from this repository
+Step 1. Install [Meteor](https://www.meteor.com): `curl https://install.meteor.com/ | sh`
 
-Step 2. Install [Meteor](https://www.meteor.com): `curl https://install.meteor.com/ | sh`
+Step 2. Clone Github repository `git clone git@github.com:Gamec/796plus.git` or download [zipped archive](https://github.com/M4v3R/796plus/archive/master.zip)
 
-Step 3. Create a new Meteor application: `meteor create 796`
+Step 3. Go into "796plus" directory `cd 796plus`
 
-Step 4. Remove placeholder files and replace them with the ones from the archive
+Step 4. Run the Meteor server: `meteor`
 
-Step 5. Add necessary packages:
-
-```
-meteor add mizzao:bootstrap-3
-meteor add jparker:crypto-sha1
-meteor add jparker:crypto-hmac
-meteor add jparker:crypto-base64
-meteor add matteodem:server-session
-meteor add iron:router
-meteor add maazalik:highcharts
-```
-
-Step 6. Run the Meteor server: `meteor`
-
-Step 7. Website is accessible at: `http://localhost:3000`
+Step 5. Application is accessible at: `http://localhost:3000`
 
 ### Screenshots
 
