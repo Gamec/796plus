@@ -13,6 +13,9 @@ Template.transactions.helpers({
         var dateObj = new Date(this.create_time * 1000);
         return dateObj.format('m-d H:i:s');
     },
+    formatPrice: function() {
+        return parseFloat(this.price).toFixed(2);
+    },
     isNegative: function(number) {
         return number < 0;
     },
