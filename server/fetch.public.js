@@ -29,11 +29,11 @@ Meteor.setInterval(function () {
     // Orderbook
     Meteor.http.call('GET', 'http://api.796.com/v3/futures/depth.html?type=weekly', {}, function(error, result) {
         function insertOrder(type, price, amount) {
-            var check = Orderbook.findOne({type: type, price: price, amount: amount});
+            var check = Orderbook.findOne({type: type, price: price});
             if (! check) 
                 Orderbook.insert({type:type, price: price, amount: amount, updated: (new Date()).getTime()});
             else 
-                Orderbook.update(check._id, {$set: {updated: (new Date()).getTime()}});
+                Orderbook.update(check._id, {$set: {amount: amount, updated: (new Date()).getTime()}});
         }
 
         if (error) return;
