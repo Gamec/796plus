@@ -5,7 +5,6 @@ Meteor.methods({
         var signature = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(CryptoJS.HmacSHA1(paramUri, secretKey)));
 
         this.unblock();
-
         var response = Meteor.http.call('GET', 'https://796.com/oauth/token?appid=' + appId + '&timestamp=' + timestamp + '&apikey=' + apiKey + '&sig=' + signature, {});
         var body = JSON.parse(response.content);
 
@@ -82,6 +81,7 @@ Meteor.methods({
         Orders.insert({id: item.no, type: item.kp, direction: item.bs, price: item.price, qty: item.gnum, completed: item.cjnum, margin: item.bzj, status: item.state, updated: (new Date()).getTime() });
     },
     transactions: function() {
+        this.unblock();
         var response = Meteor.http.call('GET', 'https://796.com/v1/weeklyfutures/records?access_token=' + encodeURIComponent(ServerSession.get('accessToken')));
         var body = JSON.parse(response.content);
 
