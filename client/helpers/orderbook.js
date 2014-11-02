@@ -5,3 +5,11 @@ Template.orderbook.helpers({
         return {asks: asks, bids: bids};
     }
 });
+
+Template.orderbook.events({
+    'click .order-price': function(e) {
+        e.preventDefault();
+        
+        $('#price').val($(e.target).html());
+    }
+});

@@ -34,6 +34,10 @@ body {
   margin-bottom: 20px;
 }
 
+.order-price {
+  cursor: pointer;
+}
+
 @-webkit-keyframes fadeOut {
   0% {opacity: 0;}
   10% {opacity: 1;}
