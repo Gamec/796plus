@@ -18,9 +18,11 @@ Meteor.setInterval(function () {
     Meteor.http.call('GET', 'http://api.796.com/v3/futures/trades.html?type=weekly', {}, function(error, result) {
         if (error) return;
         var data = JSON.parse(result.content);
+
+        var lastTrade = Trades.findOne({}, {sort: {tid: -1}});
+
         data.forEach(function(item) {
-            var check = Trades.findOne({tid: item.tid});
-            if (!check) Trades.insert(item);
+            if (item.tid > lastTrade.tid) Trades.insert(item);
         });
     });
 
