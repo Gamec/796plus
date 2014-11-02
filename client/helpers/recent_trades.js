@@ -1,6 +1,9 @@
 Template.recentTrades.helpers({
     trades: function() {
         return Trades.find({}, {sort: {date: -1}});
+    },
+    ticker: function () {
+        return TickerData.findOne();
     }
 });
 

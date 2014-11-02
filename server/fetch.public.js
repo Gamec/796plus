@@ -39,6 +39,11 @@ Meteor.setInterval(function () {
         if (error) return;
 
         var data = JSON.parse(result.content);
+
+        // Limit arrays, we're only using 30 asks and 30
+        data.bids = data.bids.slice(0, 30);
+        data.asks = data.asks.reverse().slice(0, 30);
+
         data.bids.forEach(function(item) {
             insertOrder('bid', item[0], item[1]);
         });

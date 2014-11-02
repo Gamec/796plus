@@ -1,4 +1,4 @@
-var REFRESH_INTERVAL = 2500;
+var REFRESH_INTERVAL = 3000;
 
 Meteor.setInterval(function () { 
     if (ServerSession.get('accessToken') != null) {

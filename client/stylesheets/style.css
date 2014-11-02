@@ -38,6 +38,11 @@ body {
   cursor: pointer;
 }
 
+.last-update {
+  font-size: 50%;
+  padding-top: 6px;
+}
+
 @-webkit-keyframes fadeOut {
   0% {opacity: 0;}
   10% {opacity: 1;}
