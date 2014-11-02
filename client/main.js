@@ -7,4 +7,3 @@ Meteor.subscribe('asks');
 Meteor.subscribe('orders');
 Meteor.subscribe('positions');
 Meteor.subscribe('balances');
-Meteor.subscribe('transactions');
