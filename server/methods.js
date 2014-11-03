@@ -5,7 +5,7 @@ Meteor.methods({
         var signature = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(CryptoJS.HmacSHA1(paramUri, secretKey)));
 
         this.unblock();
-        var response = Meteor.http.call('GET', 'https://www.796.com/oauth/token?appid=' + appId + '&timestamp=' + timestamp + '&apikey=' + apiKey + '&sig=' + signature, {});
+        var response = Meteor.http.call('GET', 'https://796.com/oauth/token?appid=' + appId + '&timestamp=' + timestamp + '&apikey=' + apiKey + '&sig=' + signature, {});
         var body = JSON.parse(response.content);
 
         if (body.errno != 0)
@@ -22,7 +22,7 @@ Meteor.methods({
     },
     cancelOrder: function(id, direction) {
         this.unblock();
-        var response = Meteor.http.call('POST', 'https://www.796.com/v1/weeklyfutures/cancel_order', {params: {bs: direction, no: id, access_token: ServerSession.get('accessToken')}});
+        var response = Meteor.http.call('POST', 'https://796.com/v1/weeklyfutures/cancel_order', {params: {bs: direction, no: id, access_token: ServerSession.get('accessToken')}});
         var body = JSON.parse(response.content);
 
         if (body.errno != 0) 
@@ -53,7 +53,7 @@ Meteor.methods({
         }
 
         this.unblock();
-        var response = Meteor.http.call('POST', 'https://www.796.com/v1/weeklyfutures/open_' + direction, {params: params});
+        var response = Meteor.http.call('POST', 'https://796.com/v1/weeklyfutures/open_' + direction, {params: params});
         var body = JSON.parse(response.content);
 
         if (body.errno != 0) 
@@ -71,7 +71,7 @@ Meteor.methods({
         }
 
         this.unblock();
-        var response = Meteor.http.call('POST', 'https://www.796.com/v1/weeklyfutures/close_' + direction, {params: params});
+        var response = Meteor.http.call('POST', 'https://796.com/v1/weeklyfutures/close_' + direction, {params: params});
         var body = JSON.parse(response.content);
 
         if (body.errno != 0) 
@@ -82,7 +82,7 @@ Meteor.methods({
     },
     transactions: function() {
         this.unblock();
-        var response = Meteor.http.call('GET', 'https://www.796.com/v1/weeklyfutures/records?access_token=' + encodeURIComponent(ServerSession.get('accessToken')));
+        var response = Meteor.http.call('GET', 'https://796.com/v1/weeklyfutures/records?access_token=' + encodeURIComponent(ServerSession.get('accessToken')));
         var body = JSON.parse(response.content);
 
         if (body.errno != 0) 
