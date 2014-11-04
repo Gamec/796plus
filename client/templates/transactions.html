@@ -8,7 +8,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Time</th>
+        <th class="hidden-xs">Time</th>
         <th>Type</th>
         <th>Price</th>
         <th>Quantity</th>
@@ -21,19 +21,19 @@
     <tbody>
       {{#each transactions}}
         <tr>
-          <td>{{formatDate}}</td>
+          <td class="hidden-xs">{{formatDate}}</td>
           <td>{{formatType}} {{direction.capitalize}}</td>
           <td>{{formatPrice}}</td>
-          <td>{{qty}} <small>BTC</small></td>
+          <td>{{qty}} <small class="hidden-xs">BTC</small></td>
           <td class="hidden-xs">{{margin}} <small>BTC</small></td>
           <td>
             {{#if isPLZero}}
               -
             {{else}}
               {{#if isNegative loss_profit}}
-                <span class="sell">{{loss_profit}} <small>BTC</small></span>
+                <span class="sell">{{loss_profit}} <small class="hidden-xs">BTC</small></span>
                 {{else}}
-                <span class="buy">{{loss_profit}} <small>BTC</small></span>
+                <span class="buy">{{loss_profit}} <small class="hidden-xs">BTC</small></span>
               {{/if}}
               <small class="hidden-xs">({{PLPercent margin loss_profit}}%)</small>
             {{/if}}
@@ -53,9 +53,9 @@
         <td colspan="4" align="right"><strong>Profit/Loss Sum:</strong></td>
         <td>
           {{#if isNegative PLSum}}
-            <strong class="sell">{{PLSum}} <small>BTC</small></strong>
+            <strong class="sell">{{PLSum}} <small class="hidden-xs">BTC</small></strong>
             {{else}}
-            <strong class="buy">{{PLSum}} <small>BTC</small></strong>
+            <strong class="buy">{{PLSum}} <small class="hidden-xs">BTC</small></strong>
           {{/if}}
         </td>
         <td class="hidden-xs hidden-sm"></td>

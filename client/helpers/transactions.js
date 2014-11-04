@@ -55,8 +55,6 @@ Template.transactions.helpers({
             data.push([t.create_time * 1000, lastValue]);
         });
 
-        console.log(data);
-
         return {
             chart: {
                 type: 'spline'

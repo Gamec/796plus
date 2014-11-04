@@ -4,11 +4,11 @@
     <thead>
       <tr>
         <th>Type</th>
-        <th>Quantity</th>
+        <th>Qty.</th>
         <th>Price</th>
         <th>Completed</th>
-        <th>Margin</th>
-        <th>Status</th>
+        <th class="hidden-xs">Margin</th>
+        <th class="hidden-xs">Status</th>
         <th width="60">Action</th>
       </tr>
     </thead>
@@ -17,11 +17,11 @@
         {{#each orders}}
         <tr>
           <td>{{formatType}} {{direction.capitalize}}</td>
-          <td>{{qty}} <small>BTC</small></td>
+          <td>{{qty}} <small class="hidden-xs">BTC</small></td>
           <td>{{price}}</td>
-          <td>{{completed}} <small>BTC</small></td>
-          <td>{{margin}} <small>BTC</small></td>
-          <td>{{{formatStatus}}}</td>
+          <td>{{completed}} <small class="hidden-xs">BTC</small></td>
+          <td class="hidden-xs">{{margin}} <small class="hidden-xs">BTC</small></td>
+          <td class="hidden-xs">{{{formatStatus}}}</td>
           <td><a href="#" class="btn btn-sm btn-warning cancel-order" data-id="{{id}}" data-direction="{{direction}}">Cancel</a></td>
         </tr>
         {{/each}}
